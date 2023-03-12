@@ -1,0 +1,51 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block content %}
+<div>
+    <div class="flex flex-col items-end">
+        <img src="{% static "img/infoblokk.png" %}" alt="info" />
+    </div> 
+    <div class="flex flex-col items-center text-justify">  
+        <h1 class="anime-text text-center text-4xl mt-6 capitalize">Széchenyi 2020</h1>
+        <div class="m-4">
+            <h2 class="text-xl text-center">
+                Gyártó üzemünk Hajdu-Bihar megyében, Debrecentől 20km-re Vámospércsen található.
+            </h2>
+        </div>
+        <div class="w-4/5">
+            <p class="text-justify p-2 my-4">
+                A kedvezményezett neve: TÖMÖRI NIVO Asztalosipari Gyártó és Kereskedelmi Korlátolt Felelősségű Társaság
+                A projekt címe: Tömöri-Nívó Asztalosipari Kft. fejlesztéseinek támogatása Vámospércsen
+                A szerződött támogatás összege: 9 990 624 Ft, azaz kilencmillió kilencszázkilencvenezer hatszázhuszonnégy forint.
+                A támogatás mértéke: 70 %
+                A projekt rövid ismertetése:
+                A projekt keretében az alábbi projekt elemek kerültek megvalósításra, mellyel a 16.23 TEÁOR számú - Épületasztalos-ipari termék gyártása tevékenységünk fejlesztése valósul meg.
+            </p>
+            <ul class="list-disc ml-12 leading-relaxed">
+                <li>Nyílászáró csere</li>
+                <li>Világítás korszerűsítése</li>
+                <li>Eszközbeszerzés: 1 db Bacci MOD oszcilláló fúró beszerzése</li>
+                <li>Bérköltség támogatás</li>
+                <li>Képzés: 1 fő "Hatékony munkavégzés táblázatkezelő használatával" elnevezésű képzésen vett részt</li>
+            </ul>
+
+            <p class="text-justify mt-4">
+                A projekt eredményeként beszereztünk egy oszcilláló fúrót: a projekt megvalósítása előtt kézi kisgéppel történt a furatolás, ami az általunk gyártott minőségi nyílászárók esetén a precízség fontossága miatt egy időigényesebb művelet volt. Az oszcilláló fúró beszerzése óta korszerűbb, hatékonyabb a munkánk: beállítható, nem kell kimérni külön-külön a furat-helyeket, komplett, esztétikailag szebb furatokat képez, így magasabb minőségi színvonalú lett az előállított termék. A fúrási időt jelentősen, akár 40%-kal is csökkenti, így ez a munkaművelet lerövidült, tehát a gyártói kapacitás is jelentősen növekedett, továbbá sorozatgyártásra is használható. A végeredmény szempontjából is jelentős, precízebb illesztéseket tudunk így már kivitelezni a további munkafázisokhoz, a vasalatok beszereléséhez.
+            </p>
+            <p class="text-justify mt-4">
+                Ingatlan korszerűsítés eredményeként energiatakarékos világítás korszerűsítés történt LED technikával: ezen beruházással a műhely (800 nm) világítási rendszerét tettük korszerűbbé, hogy élesebb legyen a világítás ugyanakkor energiatakarékos. Nyílászáró csere is történt, mivel az elhasználódott, régi nyílászáróink szigetelése már nem volt tökéletes, ezáltal plusz költségeket generáltak, mivel a fűtési szezonban, igen csak megemelkedett a fűtési számla.
+            </p>
+            <p class="text-justify mt-4">
+                Képzés hatására a munkánk során rendszeresen, napi szinten sokkal magabiztosabban és hatékonyabban használjuk a táblázatkezelőt.
+            </p>
+            <p class="text-justify mt-4">
+                Bértámogatás is történt: 4 kolléga bérét számoljuk el, akik a projekt megvalósítási ideje (7 hónap) alatt részt vettek abban.
+            </p>
+            <p class="text-justify mt-4 mb-8">
+                A projekt tervezett befejezési dátuma: 2021.12.31.
+                A projekt azonosító száma: GINOP-1.2.9-20-2021-01311
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

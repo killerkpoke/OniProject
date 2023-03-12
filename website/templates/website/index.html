@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block content %}
+<div class="home">
+  <div class="m-6">
+    <h1
+      id="main-title"
+      class="text-center font-medium text-gray-500 text-4xl m-6"
+    >
+      Minőségi fa nyílászárók gyártása, és beépítése
+    </h1>
+    <div class="w-full mr-9 2xl:h-96">
+      <div class="m-6" style="text-align: -webkit-center">
+        {% for img in response %}
+        <div class="mySlides hidden">
+          <img
+            src="{{ img.image }}"
+            alt="landingimg"
+            class="min-w-0 max-w-full sm:max-w-lg"
+          />
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="m-6 py-6">
+      <h2 id="second-title" class="text-center font-medium text-2xl m-3">
+        A fa előnyei
+      </h2>
+      <p id="main-desc" class="text-center md:text-justify text-lg font-normal">
+        A fa megújuló nyersanyag, az ember egyik legrégebbi építőanyaga. A fát a
+        kitermelése után manapság már szinte teljesen felhasználják: még a
+        kéreg, a fűrészpor és a lehulló fadarabok sem mennek veszendőbe. A
+        többivel összehasonlítva, a fából készült ablakok gyártása során a
+        legkisebb az energiafelhasználás
+        <i class="font-light"
+          >(pl. a PVC-ből készülő műanyag ablakokhoz képest hatod akkora)</i
+        >, csak jelentéktelen köznyezet-terhelés áll elő, és szakképzett
+        munkaerő kerül alkalmazásra. A régi, fából készült ablakok kiszerelése
+        és alkatrészeinek
+        <i class="font-light">(fa, üveg, fém)</i> újrahasznosítása már megoldott
+        probléma. A fa például alapanyaga lehet a különböző fa alapú
+        laptermékeknek, vagy a korszerű hőerőművekben CO2-mentes égetéssel
+        energiát szolgáltathat.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

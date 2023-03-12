@@ -1,0 +1,141 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="{% static 'fontawesomefree/css/fontawesome.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{% static 'fontawesomefree/css/brands.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{% static 'fontawesomefree/css/solid.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <title>Oni Project</title>
+  </head>
+  <div class="flex flex-col h-screen">
+    <header>
+      <div>
+        <div class="bg-gradient-to-r from-[#8dbec0] to-[#0E8388]">
+          <nav
+            class="container px-6 py-8 mx-auto md:flex md:justify-between md:items-center"
+          >
+            <div class="flex items-center justify-between">
+              <div class="flex md:hidden">
+                <button id="menuBtn" type="button" class="text-white">
+                  <i class="fa-solid fa-bars w-6 h-6 fill-current"></i>
+                </button>
+              </div>
+            </div>
+            <ul
+              id="menuList"
+              class="flex-col hidden mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
+            >
+              <li class="text-sm font-bold text-white hover:text-green-200">
+                <a href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="text-sm font-bold text-white hover:text-green-200">
+                <a href="{% url 'product' %}">Products</a>
+              </li>
+              <li class="text-sm font-bold text-white hover:text-green-200">
+                <a href="{% url 'furniture' %}">Furnitures</a>
+              </li>
+              <li class="text-sm font-bold text-white hover:text-green-200">
+                <a href="{% url 'timber' %}">Timber</a>
+              </li>
+              <li class="text-sm font-bold text-white hover:text-green-200">
+                <a href="{% url 'application' %}">Szechenyi Application</a>
+              </li>
+              <li class="text-sm font-bold text-white hover:text-green-200">
+                <a href="{% url 'about' %}">About</a>
+              </li>
+              <li class="text-sm font-bold text-white hover:text-green-200">
+                <a href="{% url 'contact' %}">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <body>
+      <div id="content" class="flex-grow">
+        {% block content %}
+        <div class="w-full 2xl:flex justify-center">
+          <div class="m-6 md:flex flex-warp rounded overflow-hidden shadow-lg">
+            {% for item in response %}
+            <div class="anime-card mx-4 text-center">
+              <img
+                class="w-auto h-auto lg:w-64 bg-cover"
+                src="{{ item.image }}"
+                alt="altpic"
+              />
+
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">{{ item.name }}</div>
+                <p class="text-gray-700 text-base">{{ item.description }}</p>
+                {% comment %}
+                <span
+                  class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mt-6"
+                >
+                  #tag.name
+                </span>
+                {% endcomment %} 
+                {% if item.price and item.quantity != 0 %}
+                <span class="inline-block py-3 font-semibold text-lg m-3">
+                  Gross: {{ item.price }} HUF (Ft) / m³
+                </span>
+                {% endif %}
+                {% if item.quantity == 0 %}
+                <span
+                  class="inline-block py-3 font-semibold text-lg m-3 text-red-600"
+                >
+                Out of Stock!
+                </span>
+                {% endif %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endblock content %}
+      </div>
+    </body>
+    <footer class="w-full text-center bg-[#2E4F4F] text-white">
+      <div class="py-2">
+        <a
+          href="#!"
+          type="button"
+          class="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-10 h-10 m-1"
+        >
+          <i class="fa-brands fa-facebook text-xl p-1"></i>
+        </a>
+        <a
+          href="#!"
+          type="button"
+          class="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-10 h-10 m-1"
+        >
+          <i class="fa-brands fa-instagram text-xl p-1"></i>
+        </a>
+       
+      </div>
+      <div class="text-center p-4 bg-[#2C3333]">
+        © 2022 Tömöri Nívó Kft. All Rights Reserved
+      </div>
+    </footer>
+  </div>
+  <script src={% static "js/menu.js" %}></script>
+  <script src={% static "js/slideshow.js" %}></script>
+  <script src={% static "js/animate.js"%}></script>
+</html>
